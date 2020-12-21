@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query, Render } from '@nestjs/common';
 
 import { AppService } from './app.service';
 
@@ -6,8 +6,9 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @Render('index')
   @Get()
-  getData() {
-    return this.appService.getData();
+  public index(@Query('name') name?: string) {
+    return { name };
   }
 }
