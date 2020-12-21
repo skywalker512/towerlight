@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/forum', '<rootDir>/apps/main'],
+  projects: [
+    '<rootDir>/apps/forum',
+    '<rootDir>/apps/main',
+    '<rootDir>/libs/next-adapter',
+  ],
 };

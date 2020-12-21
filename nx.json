@@ -32,6 +32,9 @@
     },
     "main": {
       "tags": []
+    },
+    "next-adapter": {
+      "tags": []
     }
   }
 }

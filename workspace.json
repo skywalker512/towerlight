@@ -145,6 +145,46 @@
           }
         }
       }
+    },
+    "next-adapter": {
+      "root": "libs/next-adapter",
+      "sourceRoot": "libs/next-adapter/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/next-adapter/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/next-adapter"
+          ],
+          "options": {
+            "jestConfig": "libs/next-adapter/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/next-adapter",
+            "tsConfig": "libs/next-adapter/tsconfig.lib.json",
+            "packageJson": "libs/next-adapter/package.json",
+            "main": "libs/next-adapter/src/index.ts",
+            "assets": [
+              "libs/next-adapter/*.md"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
