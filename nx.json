@@ -22,5 +22,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "forum": {
+      "tags": []
+    },
+    "forum-e2e": {
+      "tags": [],
+      "implicitDependencies": ["forum"]
+    }
+  }
 }
