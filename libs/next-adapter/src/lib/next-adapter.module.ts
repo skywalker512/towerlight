@@ -1,7 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { ApplicationConfig, HttpAdapterHost } from '@nestjs/core';
 import Server, { ServerConstructor } from 'next/dist/next-server/server/next-server';
-import Next from 'next';
 import { NextAdapterFilter } from './next-adapter.filter';
 import { NextAdapterService } from './next-adapter.service';
 import { RendererConfig } from './types';
@@ -23,7 +22,13 @@ export class NextAdapterModule {
     options: Partial<RendererConfig> = {}
   ): Promise<DynamicModule> {
     if(!next) {
-      next = Next(nextServerOption)
+      if (nextServerOption?.dev) {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const DevServer = require('next/dist/server/next-dev-server').default
+        next = new DevServer(nextServerOption)
+      } else {
+        next = new Server(nextServerOption)
+      }
       if (typeof next.prepare === 'function') {
         await next.prepare();
       }

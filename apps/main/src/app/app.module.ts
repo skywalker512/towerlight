@@ -3,13 +3,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { NextAdapterModule } from '@towerlight/nest-next-adapter';
 import { resolve } from 'path';
+import { environment } from '../environments/environment';
 
 @Module({
   imports: [
     NextAdapterModule.forRootAsync(
       {
-        dev: process.env.NODE_ENV !== 'production',
-        dir: resolve(__dirname, '../../../apps/forum')
+        customServer: true,
+        conf: {},
+        dev: !environment.production,
+        dir: resolve(__dirname, environment.production ? '../forum' : '../../../apps/forum')
       },
       {
         viewsDir: ''
