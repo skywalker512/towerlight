@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './index.module.scss';
 import { NextPage } from 'next';
+import Image from 'next/image';
 
 const IndexPage: NextPage<any> = props => {
   /*
@@ -15,6 +16,7 @@ const IndexPage: NextPage<any> = props => {
       <h2>Resources &amp; Tools</h2>
       <p>Thank you for using and showing some ♥ for Nx.</p>
       <div className="flex github-star-container">
+        <Image src="/nx-logo-white.svg" width="263" height="163" />
         <a
           href="https://github.com/nrwl/nx"
           target="_blank"
@@ -23,7 +25,7 @@ const IndexPage: NextPage<any> = props => {
           {' '}
           If you like Nx, please give it a star:
           <div className="github-star-badge">
-            <img src="/star.svg" className="material-icons" alt="" />
+            <Image src="/star.svg" className="material-icons" width="24" height="24" alt="" />
             Star
           </div>
         </a>
@@ -98,11 +100,24 @@ nx affected:e2e
   );
 }
 
-IndexPage.getInitialProps = async context => {
+// IndexPage.getInitialProps = async context => {
+//   if (context.req) {
+//     return (context.query as unknown) as any;
+//   }
+//   return { message: 'from client' };
+// };
+
+export async function getServerSideProps(context) {
   if (context.req) {
-    return (context.query as unknown) as any;
+    return {
+      props: {
+        ...context.query
+      }
+    }
   }
-  return { message: 'from client' };
-};
+  return {
+    props: {message: 'from client'}, // will be passed to the page component as props
+  }
+}
 
 export default IndexPage;

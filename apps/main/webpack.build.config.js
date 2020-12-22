@@ -62,6 +62,9 @@ module.exports = (config) => {
       'class-validator',
       '@ampproject/toolbox-optimizer',
       'next/dist/server/next-dev-server',
+      'react',
+      'react-dom',
+      /next\/dist\/compiled/,
     ],
     plugins: [
       ...config.plugins,
