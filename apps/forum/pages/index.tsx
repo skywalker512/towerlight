@@ -1,8 +1,9 @@
 import React from 'react';
 
 import styles from './index.module.scss';
+import { NextPage } from 'next';
 
-export function Index() {
+const IndexPage: NextPage<any> = props => {
   /*
    * Replace the elements below with your own.
    *
@@ -10,6 +11,7 @@ export function Index() {
    */
   return (
     <div className={styles.page}>
+      { JSON.stringify(props) }
       <h2>Resources &amp; Tools</h2>
       <p>Thank you for using and showing some ♥ for Nx.</p>
       <div className="flex github-star-container">
@@ -96,4 +98,11 @@ nx affected:e2e
   );
 }
 
-export default Index;
+IndexPage.getInitialProps = async context => {
+  if (context.req) {
+    return (context.query as unknown) as any;
+  }
+  return { message: 'from client' };
+};
+
+export default IndexPage;
