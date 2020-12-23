@@ -10,7 +10,6 @@ import { environment } from '../environments/environment';
     NextAdapterModule.forRootAsync(
       {
         customServer: true,
-        conf: {},
         dev: !environment.production,
         dir: resolve(__dirname, environment.production ? '../forum' : '../../../apps/forum')
       },
