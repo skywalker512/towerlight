@@ -172,7 +172,7 @@ export class NextAdapterService {
     server.render = (response: any, view: string, data: any) => {
       const isFastify = response.request !== undefined;
 
-      const res = isFastify ? response.res : response;
+      const res = isFastify ? response.raw : response;
       const req = isFastify ? response.request.raw : response.req;
 
       if (req && res && renderer) {
@@ -211,7 +211,7 @@ export class NextAdapterService {
       server
         .getInstance()
         .decorateReply('render', function(view: string, data?: ParsedUrlQuery) {
-          const res = this.res;
+          const res = this.raw;
           const req = this.request.raw;
 
           if (!renderer) {

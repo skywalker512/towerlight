@@ -40,9 +40,9 @@ export class NextAdapterFilter implements ExceptionFilter {
         );
       }
 
-      const isFastify = !!response.res;
+      const isFastify = !!response.raw;
 
-      const res: ServerResponse = isFastify ? response.res : response;
+      const res: ServerResponse = isFastify ? response.raw : response;
       const req: IncomingMessage = isFastify ? request.raw : request;
 
       if (!res.headersSent && req.url) {
