@@ -8,7 +8,7 @@ export class AppController {
 
   @Render('index')
   @Get()
-  public index(@Query('name') name?: string) {
+  public index(@Query('name') name: string = null) {
     return { name };
   }
 }

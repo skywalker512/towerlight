@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
+const path = require('path');
 const fixRequireNotFound = {
   apply (compiler) {
     // override "not found" context to try built require first
@@ -23,7 +24,7 @@ const fixRequireNotFound = {
               `if (typeof req === 'number' && __webpack_require__.m[req])\n` +
               `  return __webpack_require__(req);\n` +
               `try { return require(req) }\n` +
-              `catch (e) { if (e.code !== 'MODULE_NOT_FOUND') throw e }\n` +
+              `catch (e) { throw e }\n` +
               `var e = new Error`
             );
           }
@@ -43,7 +44,14 @@ module.exports = (config) => {
         ...config.module.rules,
         {
           test: /\.node$/,
-          loader: 'node-loader'
+          use: {
+            loader: '@vercel/webpack-asset-relocator-loader',
+            options: {
+              // optional, base folder for asset emission (eg assets/name.ext)
+              outputAssetBase: 'assets'
+            }
+          },
+          parser: { amd: false }
         }
       ]
     },
@@ -57,22 +65,23 @@ module.exports = (config) => {
       '@nestjs/websockets/socket-module',
       'cache-manager',
       'apollo-server-fastify',
-      '@nestjs/platform-fastify',
+      '@nestjs/platform-express',
       'class-transformer',
       'class-validator',
       '@ampproject/toolbox-optimizer',
       'next/dist/server/next-dev-server',
       'react',
       'react-dom',
-      /next\/dist\/compiled/,
+      'long',
+      'pino-pretty',
     ],
     plugins: [
       ...config.plugins,
-      fixRequireNotFound,
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        generateStatsFile: true
-      })
+      fixRequireNotFound
+      // new BundleAnalyzerPlugin({
+      //   analyzerMode: 'server',
+      //   generateStatsFile: true
+      // })
     ],
     stats: {
       ...config.stats,
