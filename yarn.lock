@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@actions/core@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.npm.taobao.org/@actions/core/download/@actions/core-1.2.6.tgz#a78d49f41a4def18e88ce47c2cac615d5694bf09"
+  integrity sha1-p41J9BpN7xjojOR8LKxhXVaUvwk=
+
 "@ampproject/toolbox-core@^2.6.0", "@ampproject/toolbox-core@^2.7.2":
   version "2.7.2"
   resolved "https://registry.npm.taobao.org/@ampproject/toolbox-core/download/@ampproject/toolbox-core-2.7.2.tgz#43acd7c1d0331be1db611d781d7dc2184c0aadb5"
