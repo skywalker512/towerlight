@@ -2786,6 +2786,11 @@
     "@typescript-eslint/types" "4.3.0"
     eslint-visitor-keys "^2.0.0"
 
+"@vercel/ncc@^0.26.1":
+  version "0.26.1"
+  resolved "https://registry.npm.taobao.org/@vercel/ncc/download/@vercel/ncc-0.26.1.tgz#457f13c8f207f5e74d19944b6797f4708c02359f"
+  integrity sha1-RX8TyPIH9edNGZRLZ5f0cIwCNZ8=
+
 "@vercel/webpack-asset-relocator-loader@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/@vercel/webpack-asset-relocator-loader/download/@vercel/webpack-asset-relocator-loader-1.0.0.tgz#cc3cae3b3cc8f3f631552e1ca97e566f597d5e5b"

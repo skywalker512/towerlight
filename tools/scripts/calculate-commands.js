@@ -18,18 +18,17 @@ Promise.all([commands('lint'), commands('test'), commands('build')]).then(r => {
   r.forEach(obj => {
     result.push(...Object.keys(obj).map(key => ({
       name: key,
-      target: key.replace(/\d+/g,''),
+      target: key.replace(/\d+/g, ''),
       runs: obj[key]
     })));
   });
   core.setOutput('matrix', { include: result });
+  core.setOutput('haveProject', result.length === 0 ? 'false' : 'true');
 });
 
 async function commands (target) {
   let array = JSON.parse(
-    execSync(`npx nx print-affected --base=${baseSha} --head=${headSha} --target=${target}`)
-      .toString()
-      .trim()
+    runCommandAsync(`npx nx print-affected --base=${baseSha} --head=${headSha} --target=${target}`)
   ).tasks.map(t => t.target.project);
 
   array.sort(() => 0.5 - Math.random());

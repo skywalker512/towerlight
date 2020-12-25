@@ -54,6 +54,7 @@
     "@types/webpack": "^4.41.25",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
+    "@vercel/ncc": "^0.26.1",
     "@vercel/webpack-asset-relocator-loader": "^1.0.0",
     "babel-jest": "26.2.2",
     "cypress": "^5.5.0",

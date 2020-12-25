@@ -1,4 +1,4 @@
-name: "Main"
+name: "main"
 
 on:
   push:
@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+      haveProject: ${{ steps.set-matrix.outputs.haveProject }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -36,6 +37,7 @@ jobs:
           node tools/scripts/calculate-commands.js
   do:
     needs: prepare
+    if: ${{ contains(needs.prepare.outputs.haveProject, 'true') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
