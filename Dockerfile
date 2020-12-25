@@ -1,8 +1,7 @@
 FROM node:14.15.0-alpine3.12 AS builder
 WORKDIR /project
 COPY . .
-RUN yarn install --frozen-lockfile \
-  && yarn nx run-many --target=build --projects=main,forum --parallel --prod \
+RUN yarn nx run-many --target=build --projects=main,forum --parallel --prod \
   && yarn ncc build node_modules/react/index.js -o dist/node_modules/react
 
 FROM node:14.15.0-alpine3.12
