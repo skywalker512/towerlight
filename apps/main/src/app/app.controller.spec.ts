@@ -9,14 +9,15 @@ describe('AppController', () => {
   beforeAll(async () => {
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [AppService]
     }).compile();
   });
 
   describe('getData', () => {
     it('should return "Welcome to main!"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({ message: 'Welcome to main!' });
+      expect(appController.index()).toEqual({ name: null });
+      expect(appController.index('1')).toEqual({ name: '1' });
     });
   });
 });

@@ -77,7 +77,7 @@ export class NextAdapterService {
    * Get if the env is dev
    */
   public isDev(): boolean {
-    return this.config.dev!;
+    return this.config.dev;
   }
 
   /**
@@ -169,6 +169,7 @@ export class NextAdapterService {
     const renderer = this.getRenderer();
     const getViewPath = this.getViewPath.bind(this);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     server.render = (response: any, view: string, data: any) => {
       const isFastify = response.request !== undefined;
 
@@ -224,6 +225,7 @@ export class NextAdapterService {
           return renderer(req, res, getViewPath(view), data);
         } as RenderableResponse['render']);
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       server.getInstance().use((req: any, res: any, next: () => any) => {
         res.render = ((view: string, data?: ParsedUrlQuery) => {
           if (!renderer) {

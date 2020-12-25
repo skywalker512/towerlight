@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
-const IndexPage: NextPage<any> = props => {
+const IndexPage: NextPage = props => {
   /*
    * Replace the elements below with your own.
    *

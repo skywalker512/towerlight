@@ -1,6 +1,7 @@
 module.exports = {
   displayName: 'forum',
   preset: '../../jest.preset.js',
+  setupFiles: ['./jest.setup.js'],
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': [

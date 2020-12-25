@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ParsedUrlQuery } from 'querystring';
 
 export type RequestHandler = (req: any, res: any, query?: any) => Promise<void>;

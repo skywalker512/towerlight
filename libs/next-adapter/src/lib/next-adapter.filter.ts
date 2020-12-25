@@ -23,6 +23,7 @@ export class NextAdapterFilter implements ExceptionFilter {
    * @param err
    * @param host
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async catch(err: any, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const request = ctx.getRequest();
@@ -58,7 +59,7 @@ export class NextAdapterFilter implements ExceptionFilter {
         // let next handle the error
         // it's possible that the err doesn't contain a status code, if this is the case treat
         // it as an internal server error
-        res.statusCode = err && err.status ? err.status : 500;
+        res.statusCode = err?.status ? err.status : 500;
 
         const { pathname, query } = parseUrl(req.url, true);
 
@@ -99,6 +100,7 @@ export class NextAdapterFilter implements ExceptionFilter {
    * Serialize the error similarly to method used in Next -- parse error as Nest error type
    * @param err
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public serializeError(err: any): ErrorResponse {
     const out: ErrorResponse = {};
 
