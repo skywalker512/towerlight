@@ -17,6 +17,7 @@ export const NextAdapterImport = NextAdapterModule.forRootAsync({
     },
     rendererOptions: {
       viewsDir: '',
+      dev: !configService.get<boolean>('production'),
     },
   }),
   inject: [ConfigService],
