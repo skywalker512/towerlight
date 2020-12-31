@@ -5,8 +5,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -43,6 +41,19 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Build main and forum project
+        run: yarn nx run-many --target=build --projects=main,forum --parallel --prod
+      - name: Cache Externals Packege Build
+        uses: actions/cache@v2
+        id: externals-packege
+        with:
+          path: 'dist/node_modules'
+          key: ${{ runner.os }}-externals-packege-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-externals-packege-
+      - name: Build Externals Packege
+        if: steps.externals-packege.outputs.cache-hit != 'true'
+        run: yarn ts-node --dir tools scripts/local-build.ts
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2

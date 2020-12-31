@@ -2,11 +2,10 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-
 import { AppModule } from './app/app.module';
 import {
   FastifyAdapter,
-  NestFastifyApplication
+  NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 
 async function bootstrap() {
@@ -14,11 +13,9 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter()
   );
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;
   await app.listen(port, '0.0.0.0', () => {
-    Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+    Logger.log('Listening at http://localhost:' + port);
   });
   if (module.hot) {
     module.hot.accept();
@@ -26,6 +23,4 @@ async function bootstrap() {
   }
 }
 
-bootstrap().catch(e => {
-  throw new Error(e);
-});
+bootstrap();

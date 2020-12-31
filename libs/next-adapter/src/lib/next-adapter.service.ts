@@ -1,4 +1,8 @@
-import { HttpServer, InternalServerErrorException } from '@nestjs/common';
+import {
+  HttpServer,
+  Inject,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { ParsedUrlQuery } from 'querystring';
 import { isInternalUrl } from './next-utils';
 import {
@@ -9,24 +13,15 @@ import {
   RendererConfig,
   RequestHandler,
 } from './types';
+import Server from 'next/dist/next-server/server/next-server';
+import { HttpAdapterHost } from '@nestjs/core';
+import {
+  NEXT_ADAPTER_MODULE_OPTIONS,
+  NEXT_ADAPTER_SERVER,
+} from './next-adapter.constants';
+import type { NextAdapterModuleOptions } from './next-adapter.interface';
 
 export class NextAdapterService {
-  public static init(
-    config: Partial<RendererConfig>,
-    handler: RequestHandler,
-    renderer: Renderer,
-    errorRenderer: ErrorRenderer,
-    server: HttpServer,
-  ): NextAdapterService {
-    const self = new NextAdapterService();
-    self.mergeConfig(config);
-    self.setRequestHandler(handler);
-    self.setRenderer(renderer);
-    self.setErrorRenderer(errorRenderer);
-    self.bindHttpServer(server);
-    return self;
-  }
-
   private initialized = false;
   private requestHandler?: RequestHandler;
   private renderer?: Renderer;
@@ -36,6 +31,20 @@ export class NextAdapterService {
     dev: process.env.NODE_ENV !== 'production',
     viewsDir: '/views',
   };
+
+  constructor(
+    private readonly nestHost: HttpAdapterHost,
+    @Inject(NEXT_ADAPTER_MODULE_OPTIONS)
+    private readonly options: NextAdapterModuleOptions,
+    @Inject(NEXT_ADAPTER_SERVER)
+    private readonly next: Server
+  ) {
+    this.mergeConfig(this.options.rendererOptions);
+    this.setRequestHandler(next.getRequestHandler());
+    this.setRenderer(next.render.bind(next));
+    this.setErrorRenderer(next.renderError.bind(next));
+    this.bindHttpServer(this.nestHost.httpAdapter);
+  }
 
   /**
    * Merge the default config with the config obj passed to method
@@ -183,15 +192,15 @@ export class NextAdapterService {
         return renderer(req, res, getViewPath(view), data);
       } else if (!renderer) {
         throw new InternalServerErrorException(
-          'RenderService: renderer is not set',
+          'RenderService: renderer is not set'
         );
       } else if (!res) {
         throw new InternalServerErrorException(
-          'RenderService: could not get the response',
+          'RenderService: could not get the response'
         );
       } else if (!req) {
         throw new InternalServerErrorException(
-          'RenderService: could not get the request',
+          'RenderService: could not get the request'
         );
       }
 
@@ -211,13 +220,16 @@ export class NextAdapterService {
     if (isFastifyAdapter) {
       server
         .getInstance()
-        .decorateReply('render', function(view: string, data?: ParsedUrlQuery) {
+        .decorateReply('render', function (
+          view: string,
+          data?: ParsedUrlQuery
+        ) {
           const res = this.raw;
           const req = this.request.raw;
 
           if (!renderer) {
             throw new InternalServerErrorException(
-              'RenderService: renderer is not set',
+              'RenderService: renderer is not set'
             );
           }
 
@@ -230,7 +242,7 @@ export class NextAdapterService {
         res.render = ((view: string, data?: ParsedUrlQuery) => {
           if (!renderer) {
             throw new InternalServerErrorException(
-              'RenderService: renderer is not set',
+              'RenderService: renderer is not set'
             );
           }
           return renderer(req, res, getViewPath(view), data);

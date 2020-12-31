@@ -126,7 +126,8 @@
           "executor": "@nrwl/node:execute",
           "options": {
             "watch": false,
-            "buildTarget": "main:build"
+            "buildTarget": "main:build",
+            "runtimeArgs": ["--trace-warnings"]
           }
         },
         "lint": {

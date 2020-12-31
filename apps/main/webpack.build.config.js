@@ -1,17 +1,18 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 // eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
+const { externals } = require('./externalPackege');
+
 const fixRequireNotFound = {
-  apply (compiler) {
+  apply(compiler) {
     // override "not found" context to try built require first
-    compiler.hooks.compilation.tap('ncc', compilation => {
+    compiler.hooks.compilation.tap('ncc', (compilation) => {
       compilation.moduleTemplates.javascript.hooks.render.tap(
         'ncc',
-        (
-          moduleSourcePostModule,
-          module
-        ) => {
+        (moduleSourcePostModule, module) => {
           if (
             module._contextDependencies &&
             moduleSourcePostModule._value.match(
@@ -22,16 +23,16 @@ const fixRequireNotFound = {
             return moduleSourcePostModule._value.replace(
               'var e = new Error',
               `if (typeof req === 'number' && __webpack_require__.m[req])\n` +
-              `  return __webpack_require__(req);\n` +
-              `try { return require(req) }\n` +
-              `catch (e) { throw e }\n` +
-              `var e = new Error`
+                `  return __webpack_require__(req);\n` +
+                `try { return require(req) }\n` +
+                `catch (e) { throw e }\n` +
+                `var e = new Error`
             );
           }
         }
       );
     });
-  }
+  },
 };
 
 // eslint-disable-next-line no-undef
@@ -48,17 +49,16 @@ module.exports = (config) => {
             loader: '@vercel/webpack-asset-relocator-loader',
             options: {
               // optional, base folder for asset emission (eg assets/name.ext)
-              outputAssetBase: 'assets'
-            }
+              outputAssetBase: 'assets',
+            },
           },
-          parser: { amd: false }
-        }
-      ]
+          parser: { amd: false },
+        },
+      ],
     },
-    // entry: { 'webpack/hot/poll?100': 'webpack/hot/poll?100', ...config.entry},
     entry: [...config.entry.main],
     externals: [
-      // nodeExternals({}),
+      ...externals,
       '@nestjs/microservices',
       '@nestjs/microservices/microservices-module',
       '@nestjs/websockets',
@@ -66,30 +66,22 @@ module.exports = (config) => {
       'cache-manager',
       'apollo-server-fastify',
       '@nestjs/platform-express',
-      'class-transformer',
-      'class-validator',
       '@ampproject/toolbox-optimizer',
       'next/dist/server/next-dev-server',
-      'react',
       'react-dom',
       'long',
       'pino-pretty',
+      '@nestjs/mongoose',
+      '@nestjs/swagger',
     ],
-    plugins: [
-      ...config.plugins,
-      fixRequireNotFound
-      // new BundleAnalyzerPlugin({
-      //   analyzerMode: 'server',
-      //   generateStatsFile: true
-      // })
-    ],
+    plugins: [...config.plugins, fixRequireNotFound],
     stats: {
       ...config.stats,
       warningsFilter: [
         /Critical dependency: the request of a dependency is an expression/,
         /Critical dependency: require function is used in a way in which dependencies cannot be statically extracted/,
-        /license-webpack-plugin/
-      ]
-    }
+        /license-webpack-plugin/,
+      ],
+    },
   };
 };

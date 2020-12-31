@@ -11,11 +11,7 @@ import { ErrorResponse } from './types';
 
 @Catch()
 export class NextAdapterFilter implements ExceptionFilter {
-  private readonly service: NextAdapterService;
-
-  constructor(service: NextAdapterService) {
-    this.service = service;
-  }
+  constructor(private readonly service: NextAdapterService) {}
 
   /**
    * Nest isn't aware of how next handles routing for the build assets, let next
@@ -37,7 +33,7 @@ export class NextAdapterFilter implements ExceptionFilter {
       // if somehow they aren't throw an error
       if (!requestHandler || !errorRenderer) {
         throw new Error(
-          'Request and/or error renderer not set on NextAdapterService',
+          'Request and/or error renderer not set on NextAdapterService'
         );
       }
 

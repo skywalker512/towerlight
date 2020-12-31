@@ -1,26 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { NextAdapterModule } from '@towerlight/nest-next-adapter';
-import { resolve } from 'path';
-import { environment } from '../environments/environment';
+import { TerminusModule } from '@nestjs/terminus';
+import { TypeOrmImport } from '../config/type-orm';
+import { NextAdapterImport } from '../config/next';
+import { ConfigModuleImport } from '../config/config';
 
 @Module({
   imports: [
-    NextAdapterModule.forRootAsync(
-      {
-        customServer: true,
-        conf: {},
-        dev: !environment.production,
-        dir: resolve(__dirname, environment.production ? '../forum' : '../../../apps/forum')
-      },
-      {
-        viewsDir: ''
-      }
-    )
+    NextAdapterImport,
+    TypeOrmImport,
+    TerminusModule,
+    ConfigModuleImport,
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [AppService],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -1,0 +1,12 @@
+diff --git a/node_modules/@nestjs/terminus/dist/utils/checkPackage.util.js b/node_modules/@nestjs/terminus/dist/utils/checkPackage.util.js
+index dfecc55..41391b4 100644
+--- a/node_modules/@nestjs/terminus/dist/utils/checkPackage.util.js
++++ b/node_modules/@nestjs/terminus/dist/utils/checkPackage.util.js
+@@ -46,6 +46,7 @@ function optional(module) {
+  * checkPackages(['process', 'no_package'], 'TEST')
+  */
+ function checkPackages(packageNames, reason) {
++    if (process.env.NODE_ENV === 'production' && __webpack_require__ != null) return []
+     const packages = packageNames.map((packageName, index) => ({
+         pkg: optional(packageName),
+         index,
