@@ -1,0 +1,10 @@
+{
+  "name": "@towerlight/dokument",
+  "version": "0.0.2",
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "gray-matter": "^4.0.2",
+    "loader-utils": "^1.4.0",
+    "slash": "^3.0.0"
+  }
+}

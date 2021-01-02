@@ -35,6 +35,16 @@
     },
     "next-adapter": {
       "tags": []
+    },
+    "dokument": {
+      "tags": []
+    },
+    "doc": {
+      "tags": []
+    },
+    "doc-e2e": {
+      "tags": [],
+      "implicitDependencies": ["doc"]
     }
   }
 }

@@ -3,5 +3,7 @@ module.exports = {
     '<rootDir>/apps/forum',
     '<rootDir>/apps/main',
     '<rootDir>/libs/next-adapter',
+    '<rootDir>/libs/dokument',
+    '<rootDir>/apps/doc',
   ],
 };

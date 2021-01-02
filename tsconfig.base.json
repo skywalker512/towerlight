@@ -10,6 +10,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "importsNotUsedAsValues": "error",
+    "strict": true,
     "lib": [
       "esnext",
       "dom"
@@ -20,6 +24,9 @@
     "paths": {
       "@towerlight/nest-next-adapter": [
         "libs/next-adapter/src/index.ts"
+      ],
+      "@towerlight/dokument": [
+        "libs/dokument/src/index.ts"
       ]
     }
   },
