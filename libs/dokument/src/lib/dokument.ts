@@ -1,8 +1,3 @@
-import type {
-  Header,
-  Redirect,
-  Rewrite,
-} from 'next/dist/lib/load-custom-routes';
 import type { Configuration } from 'webpack';
 import type { LoaderConfig } from './loader';
 
@@ -24,10 +19,6 @@ type NextConfig = { [key: string]: unknown } & {
     domains?: DomainLocales;
     localeDetection?: false;
   } | null;
-
-  headers?: () => Promise<Header[]>;
-  rewrites?: () => Promise<Rewrite[]>;
-  redirects?: () => Promise<Redirect[]>;
 
   trailingSlash?: boolean;
 };

@@ -6,4 +6,9 @@ module.exports = a(
   '@towerlight/dokument-docs',
   './theme.config.js',
   path.resolve(__dirname, 'pages')
-)({});
+)({
+  i18n: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en',
+  },
+});

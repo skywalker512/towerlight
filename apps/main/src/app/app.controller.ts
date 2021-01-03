@@ -17,7 +17,13 @@ export class AppController {
 
   @Render('index')
   @Get()
-  public index(@Query('name') name: string = null) {
+  public index(@Query('name') name: string | null = null) {
+    return { name };
+  }
+
+  @Render('t')
+  @Get('/en/t')
+  public index1(@Query('name') name: string | null = null) {
     return { name };
   }
 

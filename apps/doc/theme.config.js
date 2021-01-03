@@ -4,4 +4,8 @@ export default {
   search: true,
   prevLinks: true,
   nextLinks: true,
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'zh', text: '简体中文' },
+  ],
 };

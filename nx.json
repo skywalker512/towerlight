@@ -45,6 +45,9 @@
     "doc-e2e": {
       "tags": [],
       "implicitDependencies": ["doc"]
+    },
+    "dokument-docs": {
+      "tags": []
     }
   }
 }

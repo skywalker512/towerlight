@@ -316,6 +316,56 @@
           }
         }
       }
+    },
+    "dokument-docs": {
+      "root": "libs/dokument-docs",
+      "sourceRoot": "libs/dokument-docs/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dokument-docs/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/dokument-docs",
+            "tsConfig": "libs/dokument-docs/tsconfig.lib.json",
+            "project": "libs/dokument-docs/package.json",
+            "entryFile": "libs/dokument-docs/src/index.ts",
+            "external": [
+              "react",
+              "react-dom"
+            ],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/dokument-docs"
+          ],
+          "options": {
+            "jestConfig": "libs/dokument-docs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -11,27 +11,15 @@
     "target": "es2015",
     "module": "esnext",
     "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "importsNotUsedAsValues": "error",
-    "strict": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@towerlight/nest-next-adapter": [
-        "libs/next-adapter/src/index.ts"
-      ],
-      "@towerlight/dokument": [
-        "libs/dokument/src/index.ts"
-      ]
+      "@towerlight/nest-next-adapter": ["libs/next-adapter/src/index.ts"],
+      "@towerlight/dokument": ["libs/dokument/src/index.ts"],
+      "@towerlight/dokument-docs": ["libs/dokument-docs/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
