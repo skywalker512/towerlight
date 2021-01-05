@@ -8,9 +8,7 @@ const limit = pLimit(os.cpus().length);
 Promise.all(
   externals.map((i) =>
     limit(() =>
-      runCommand(
-        `yarn ncc build node_modules/${i}/index.js -o dist/node_modules/${i}`
-      )
+      runCommand(`yarn ncc build node_modules/${i} -o dist/node_modules/${i}`)
     )
   )
 ).then((r) => r.forEach((i) => console.log(i)));
