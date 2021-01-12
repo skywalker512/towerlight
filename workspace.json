@@ -366,6 +366,56 @@
           }
         }
       }
+    },
+    "dokument-ssg": {
+      "root": "libs/dokument-ssg",
+      "sourceRoot": "libs/dokument-ssg/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dokument-ssg/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/dokument-ssg",
+            "tsConfig": "libs/dokument-ssg/tsconfig.lib.json",
+            "project": "libs/dokument-ssg/package.json",
+            "entryFile": "libs/dokument-ssg/src/index.ts",
+            "external": [
+              "react",
+              "react-dom"
+            ],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/dokument-ssg"
+          ],
+          "options": {
+            "jestConfig": "libs/dokument-ssg/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

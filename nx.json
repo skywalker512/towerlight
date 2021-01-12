@@ -48,6 +48,9 @@
     },
     "dokument-docs": {
       "tags": []
+    },
+    "dokument-ssg": {
+      "tags": []
     }
   }
 }

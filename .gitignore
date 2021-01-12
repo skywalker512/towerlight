@@ -43,3 +43,4 @@ Thumbs.db
 **.0x
 
 **/.local.env
+**/out

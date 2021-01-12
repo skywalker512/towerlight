@@ -18,7 +18,8 @@
     "paths": {
       "@towerlight/nest-next-adapter": ["libs/next-adapter/src/index.ts"],
       "@towerlight/dokument": ["libs/dokument/src/index.ts"],
-      "@towerlight/dokument-docs": ["libs/dokument-docs/src/index.ts"]
+      "@towerlight/dokument-docs": ["libs/dokument-docs/src/index.ts"],
+      "@towerlight/dokument-ssg": ["libs/dokument-ssg/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

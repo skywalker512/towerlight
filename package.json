@@ -2,10 +2,6 @@
   "name": "towerlight",
   "version": "0.0.0",
   "license": "MIT",
-  "workspaces": [
-    "dist/libs/dokument",
-    "dist/libs/dokument-docs"
-  ],
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
@@ -93,7 +89,6 @@
     "@nestjs/platform-fastify": "^7.6.4",
     "@nestjs/terminus": "^7.0.1",
     "@nestjs/typeorm": "^7.1.5",
-    "@towerlight/dokument": "*",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "core-js": "^3.6.5",

@@ -1,14 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const a = require('@towerlight/dokument').default;
+const a = require('../../dist/libs/dokument');
 const path = require('path');
 
 module.exports = a(
-  '@towerlight/dokument-docs',
+  'dist/libs/dokument-docs',
   './theme.config.js',
   path.resolve(__dirname, 'pages')
-)({
-  i18n: {
-    locales: ['en', 'zh'],
-    defaultLocale: 'en',
-  },
-});
+)();

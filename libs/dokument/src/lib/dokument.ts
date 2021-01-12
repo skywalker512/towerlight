@@ -59,7 +59,8 @@ export default (theme: string, themeConfig: string, pagePath: string) => (
               loader: '@mdx-js/loader',
             },
             {
-              loader: '@towerlight/dokument/src/lib/loader.js',
+              // eslint-disable-next-line @typescript-eslint/no-var-requires
+              loader: require.resolve('../lib/loader'),
               options: {
                 theme,
                 themeConfig,

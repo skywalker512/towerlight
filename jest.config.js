@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/dokument',
     '<rootDir>/apps/doc',
     '<rootDir>/libs/dokument-docs',
+    '<rootDir>/libs/dokument-ssg',
   ],
 };

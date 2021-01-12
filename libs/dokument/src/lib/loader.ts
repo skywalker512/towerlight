@@ -288,7 +288,7 @@ export default function I18NPage () {
 
   const prefix = `
 import withLayout from '${layout}'
-import { withSSG } from '@towerlight/dokument'
+import { withSSG } from '@towerlight/dokument-ssg'
 ${layoutConfig ? `import layoutConfig from '${layoutConfig}'` : ''}
 `;
 
