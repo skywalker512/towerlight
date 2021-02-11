@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.13
 WORKDIR /project
 RUN apk add --no-cache --virtual .timezone tzdata \
   && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
