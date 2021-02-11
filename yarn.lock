@@ -1908,27 +1908,25 @@
     puka "^1.0.1"
     read-package-json-fast "^1.1.3"
 
-"@nrwl/cli@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/cli/download/@nrwl/cli-11.0.15.tgz#4720510a142ca63e4fe51981d3cd6bc8cc1ced1c"
-  integrity sha1-RyBRChQspj5P5RmB081ryMwc7Rw=
+"@nrwl/cli@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/cli/download/@nrwl/cli-11.2.12.tgz#04f35b62ed0a7d2ddd27ca04378ee5fe2f6e898e"
+  integrity sha1-BPNbYu0KfS3dJ8oEN47l/i9uiY4=
   dependencies:
-    "@nrwl/tao" "11.0.15"
+    "@nrwl/tao" "11.2.12"
     chalk "4.1.0"
     tmp "0.0.33"
     yargs "15.4.1"
     yargs-parser "20.0.0"
 
-"@nrwl/cypress@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/cypress/download/@nrwl/cypress-11.0.15.tgz#48addd942b7fa82f2778d4567270ffd8cc693d9e"
-  integrity sha1-SK3dlCt/qC8neNRWcnD/2MxpPZ4=
+"@nrwl/cypress@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/cypress/download/@nrwl/cypress-11.2.12.tgz#847ca303af9b0cbb00cff9f22c41a34d08d84b29"
+  integrity sha1-hHyjA6+bDLsAz/nyLEGjTQjYSyk=
   dependencies:
-    "@angular-devkit/architect" "~0.1100.1"
-    "@angular-devkit/core" "~11.0.1"
-    "@angular-devkit/schematics" "~11.0.1"
     "@cypress/webpack-preprocessor" "~4.1.2"
-    "@nrwl/devkit" "11.0.15"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/linter" "11.2.12"
     fork-ts-checker-webpack-plugin "^3.1.1"
     fs-extra "7.0.1"
     rxjs "^6.5.4"
@@ -1939,86 +1937,87 @@
     webpack-node-externals "1.7.2"
     yargs-parser "20.0.0"
 
-"@nrwl/devkit@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/devkit/download/@nrwl/devkit-11.0.15.tgz#31958fe351f4049aeb5d0c62d3f4135227eeeafe"
-  integrity sha1-MZWP41H0BJrrXQxi0/QTUifu6v4=
+"@nrwl/devkit@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/devkit/download/@nrwl/devkit-11.2.12.tgz#d0f21d46063878e9baa6f6356db939ce09434033"
+  integrity sha1-0PIdRgY4eOm6pvY1bbk5zglDQDM=
   dependencies:
-    "@nrwl/tao" "11.0.15"
+    "@nrwl/tao" "11.2.12"
     ejs "^3.1.5"
+    ignore "^5.0.4"
+    semver "6.3.0"
     strip-json-comments "2.0.1"
     tslib "^2.0.0"
 
-"@nrwl/eslint-plugin-nx@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/eslint-plugin-nx/download/@nrwl/eslint-plugin-nx-11.0.15.tgz#4d937204eb8626b8b03f155013a1a594e3595c02"
-  integrity sha1-TZNyBOuGJriwPxVQE6GllONZXAI=
+"@nrwl/eslint-plugin-nx@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/eslint-plugin-nx/download/@nrwl/eslint-plugin-nx-11.2.12.tgz#36616d449d13616d6c2c5c3c7c530ea7931daaa7"
+  integrity sha1-NmFtRJ0TYW1sLFw8fFMOp5Mdqqc=
   dependencies:
-    "@angular-devkit/core" "~11.0.1"
+    "@nrwl/devkit" "11.2.12"
     "@typescript-eslint/experimental-utils" "^4.3.0"
     confusing-browser-globals "^1.0.9"
 
-"@nrwl/jest@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/jest/download/@nrwl/jest-11.0.15.tgz#c8eb2dae04ddcca18a0711df05c76177f1a6e7e1"
-  integrity sha1-yOstrgTdzKGKBxHfBcdhd/Gm5+E=
+"@nrwl/jest@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/jest/download/@nrwl/jest-11.2.12.tgz#db78adfe55acec02c25f2e5cf806b7250074e901"
+  integrity sha1-23it/lWs7ALCXy5c+Aa3JQB06QE=
   dependencies:
-    "@angular-devkit/architect" "~0.1100.1"
-    "@angular-devkit/core" "~11.0.1"
-    "@angular-devkit/schematics" "~11.0.1"
-    "@nrwl/devkit" "11.0.15"
+    "@nrwl/devkit" "11.2.12"
     jest-resolve "^26.6.2"
     rxjs "^6.5.4"
     strip-json-comments "2.0.1"
     tslib "^2.0.0"
 
-"@nrwl/linter@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/linter/download/@nrwl/linter-11.0.15.tgz#ce198ae64d2c195610ee8b932d0b1cadf1ab1980"
-  integrity sha1-zhmK5k0sGVYQ7ouTLQscrfGrGYA=
+"@nrwl/linter@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/linter/download/@nrwl/linter-11.2.12.tgz#8037e1ce28c6ab5b38b351c4bff106790e93162e"
+  integrity sha1-gDfhzijGq1s4s1HEv/EGeQ6TFi4=
   dependencies:
-    "@angular-devkit/architect" "~0.1100.1"
+    "@nrwl/devkit" "11.2.12"
     glob "7.1.4"
     minimatch "3.0.4"
     tslib "^2.0.0"
 
-"@nrwl/nest@^11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/nest/download/@nrwl/nest-11.0.15.tgz#19e615a7ee994307a8575c58fccc88305229112d"
-  integrity sha1-GeYVp+6ZQweoV1xY/MyIMFIpES0=
+"@nrwl/nest@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/nest/download/@nrwl/nest-11.2.12.tgz#2c0433912a2a20af6b0889fccc453ac7259b089f"
+  integrity sha1-LAQzkSoqIK9rCIn8zEU6xyWbCJ8=
   dependencies:
     "@angular-devkit/core" "~11.0.1"
     "@angular-devkit/schematics" "~11.0.1"
     "@nestjs/schematics" "^7.0.0"
-    "@nrwl/devkit" "11.0.15"
-    "@nrwl/jest" "11.0.15"
-    "@nrwl/node" "11.0.15"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/jest" "11.2.12"
+    "@nrwl/node" "11.2.12"
 
-"@nrwl/next@^11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/next/download/@nrwl/next-11.0.15.tgz#662a98343f1215fd06e8b52d62a526bc5bfe29e5"
-  integrity sha1-ZiqYND8SFf0G6LUtYqUmvFv+KeU=
+"@nrwl/next@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/next/download/@nrwl/next-11.2.12.tgz#f5f3db0fc21ffb47e33266938955aa29b33363e4"
+  integrity sha1-9fPbD8If+0fjMmaTiVWqKbMzY+Q=
   dependencies:
     "@angular-devkit/core" "~11.0.1"
     "@angular-devkit/schematics" "~11.0.1"
-    "@nrwl/react" "11.0.15"
-    "@nrwl/web" "11.0.15"
+    "@nrwl/react" "11.2.12"
+    "@nrwl/web" "11.2.12"
     "@svgr/webpack" "^5.4.0"
     chalk "4.1.0"
+    copy-webpack-plugin "6.0.3"
+    fs-extra "7.0.1"
     url-loader "^3.0.0"
 
-"@nrwl/node@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/node/download/@nrwl/node-11.0.15.tgz#91678f9dc850926f169f035127464d060bd55513"
-  integrity sha1-kWePnchQkm8WnwNRJ0ZNBgvVVRM=
+"@nrwl/node@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/node/download/@nrwl/node-11.2.12.tgz#34d6aebba3252d0a8627b446698c7e74375d1a55"
+  integrity sha1-NNauu6MlLQqGJ7RGaYx+dDddGlU=
   dependencies:
     "@angular-devkit/architect" "~0.1100.1"
     "@angular-devkit/build-webpack" "~0.1100.1"
     "@angular-devkit/core" "~11.0.1"
     "@angular-devkit/schematics" "~11.0.1"
-    "@nrwl/devkit" "11.0.15"
-    "@nrwl/jest" "11.0.15"
-    "@nrwl/linter" "11.0.15"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/jest" "11.2.12"
+    "@nrwl/linter" "11.2.12"
     circular-dependency-plugin "5.2.0"
     copy-webpack-plugin "6.0.3"
     fork-ts-checker-webpack-plugin "^3.1.1"
@@ -2036,19 +2035,19 @@
     webpack-merge "4.2.1"
     webpack-node-externals "1.7.2"
 
-"@nrwl/react@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/react/download/@nrwl/react-11.0.15.tgz#1bf73ac4deb0e25099c0d6a4bf40b522ce9ffe43"
-  integrity sha1-G/c6xN6w4lCZwNakv0C1Is6f/kM=
+"@nrwl/react@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/react/download/@nrwl/react-11.2.12.tgz#a83c6d5e845e958669ae923bb20809cd8ee3b0d9"
+  integrity sha1-qDxtXoRelYZprpI7sggJzY7jsNk=
   dependencies:
     "@angular-devkit/core" "~11.0.1"
     "@angular-devkit/schematics" "~11.0.1"
     "@babel/core" "7.9.6"
     "@babel/preset-react" "7.9.4"
-    "@nrwl/cypress" "11.0.15"
-    "@nrwl/devkit" "11.0.15"
-    "@nrwl/jest" "11.0.15"
-    "@nrwl/web" "11.0.15"
+    "@nrwl/cypress" "11.2.12"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/jest" "11.2.12"
+    "@nrwl/web" "11.2.12"
     "@svgr/webpack" "^5.4.0"
     eslint-plugin-import "^2.20.1"
     eslint-plugin-jsx-a11y "^6.2.3"
@@ -2056,10 +2055,10 @@
     eslint-plugin-react-hooks "^2.4.0"
     url-loader "^3.0.0"
 
-"@nrwl/tao@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/tao/download/@nrwl/tao-11.0.15.tgz#faf440224e95e6ffb41aec07bd48dbdf5a37c2ac"
-  integrity sha1-+vRAIk6V5v+0GuwHvUjb31o3wqw=
+"@nrwl/tao@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/tao/download/@nrwl/tao-11.2.12.tgz#400925366ceaf1249b4a937ab8bf49c035cccddc"
+  integrity sha1-QAklNmzq8SSbSpN6uL9JwDXMzdw=
   dependencies:
     "@angular-devkit/architect" "~0.1100.1"
     "@angular-devkit/core" "~11.0.1"
@@ -2069,16 +2068,17 @@
     inquirer "^6.3.1"
     minimist "^1.2.5"
     rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
     semver "6.3.0"
     strip-json-comments "2.0.1"
     tmp "0.0.33"
     tslib "^2.0.0"
     yargs-parser "20.0.0"
 
-"@nrwl/web@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/web/download/@nrwl/web-11.0.15.tgz#c61e56c169d46ee8469c2af1719b60e03560f806"
-  integrity sha1-xh5WwWnUbuhGnCrxcZtg4DVg+AY=
+"@nrwl/web@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/web/download/@nrwl/web-11.2.12.tgz#e18171a72eb5e23abf882b8ed9dec881658e4a65"
+  integrity sha1-4YFxpy614jq/iCuO2d7IgWWOSmU=
   dependencies:
     "@angular-devkit/architect" "~0.1100.1"
     "@angular-devkit/build-optimizer" "~0.1100.1"
@@ -2091,10 +2091,10 @@
     "@babel/plugin-transform-regenerator" "7.8.7"
     "@babel/preset-env" "7.9.6"
     "@babel/preset-typescript" "7.10.4"
-    "@nrwl/cypress" "11.0.15"
-    "@nrwl/devkit" "11.0.15"
-    "@nrwl/jest" "11.0.15"
-    "@nrwl/linter" "11.0.15"
+    "@nrwl/cypress" "11.2.12"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/jest" "11.2.12"
+    "@nrwl/linter" "11.2.12"
     "@rollup/plugin-babel" "5.0.2"
     "@rollup/plugin-commonjs" "11.0.2"
     "@rollup/plugin-image" "2.0.4"
@@ -2174,17 +2174,16 @@
     webpack-subresource-integrity "^1.5.1"
     worker-plugin "3.2.0"
 
-"@nrwl/workspace@11.0.15":
-  version "11.0.15"
-  resolved "https://registry.npm.taobao.org/@nrwl/workspace/download/@nrwl/workspace-11.0.15.tgz#bb9f93dbc38f59913a2037cdf21d9f98cc72adfe"
-  integrity sha1-u5+T28OPWZE6IDfN8h2fmMxyrf4=
+"@nrwl/workspace@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.npm.taobao.org/@nrwl/workspace/download/@nrwl/workspace-11.2.12.tgz#0506b1bd1e4aebfcd01e1c511d81e73d4b69f7eb"
+  integrity sha1-BQaxvR5K6/zQHhxRHYHnPUtp9+s=
   dependencies:
-    "@angular-devkit/architect" "~0.1100.1"
-    "@angular-devkit/core" "~11.0.1"
-    "@angular-devkit/schematics" "~11.0.1"
-    "@nrwl/cli" "11.0.15"
-    "@nrwl/devkit" "11.0.15"
-    axios "0.19.2"
+    "@nrwl/cli" "11.2.12"
+    "@nrwl/devkit" "11.2.12"
+    "@nrwl/jest" "11.2.12"
+    "@nrwl/linter" "11.2.12"
+    axios "0.21.1"
     chalk "4.1.0"
     cosmiconfig "^4.0.0"
     dotenv "6.2.0"
@@ -3676,17 +3675,17 @@ axe-core@^4.0.2:
   resolved "https://registry.npm.taobao.org/axe-core/download/axe-core-4.1.1.tgz?cache=0&sync_timestamp=1608311268242&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxe-core%2Fdownload%2Faxe-core-4.1.1.tgz#70a7855888e287f7add66002211a423937063eaf"
   integrity sha1-cKeFWIjih/et1mACIRpCOTcGPq8=
 
-axios@0.19.2:
-  version "0.19.2"
-  resolved "https://registry.npm.taobao.org/axios/download/axios-0.19.2.tgz?cache=0&sync_timestamp=1603468716105&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
-  dependencies:
-    follow-redirects "1.5.10"
-
 axios@0.21.0:
   version "0.21.0"
   resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.0.tgz?cache=0&sync_timestamp=1603468716105&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
   integrity sha1-Jt8IiAOiNQ3/LCf5b++Z/klEKso=
+  dependencies:
+    follow-redirects "^1.10.0"
+
+axios@0.21.1:
+  version "0.21.1"
+  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
   dependencies:
     follow-redirects "^1.10.0"
 
@@ -5514,13 +5513,6 @@ debug@4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debug@=3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npm.taobao.org/debug/download/debug-3.1.0.tgz?cache=0&sync_timestamp=1607566512593&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
-  integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
-  dependencies:
-    ms "2.0.0"
-
 debug@^3.1.0, debug@^3.1.1, debug@^3.2.5:
   version "3.2.7"
   resolved "https://registry.npm.taobao.org/debug/download/debug-3.2.7.tgz?cache=0&sync_timestamp=1607566512593&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
@@ -6984,13 +6976,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.5.10.tgz?cache=0&sync_timestamp=1607916915121&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
-  dependencies:
-    debug "=3.1.0"
 
 follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.1"
@@ -11727,10 +11712,10 @@ prepend-http@^1.0.0:
   resolved "https://registry.npm.taobao.org/prepend-http/download/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.1.2.tgz?cache=0&sync_timestamp=1606521062616&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprettier%2Fdownload%2Fprettier-2.1.2.tgz#3050700dae2e4c8b67c4c3f666cdb8af405e1ce5"
-  integrity sha1-MFBwDa4uTItnxMP2Zs24r0BeHOU=
+prettier@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha1-eVoaeN1S8HPaDNQrIfnJE4GSP/U=
 
 pretty-bytes@^5.4.1:
   version "5.4.1"
@@ -12624,6 +12609,11 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   integrity sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=
   dependencies:
     aproba "^1.1.1"
+
+rxjs-for-await@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/rxjs-for-await/download/rxjs-for-await-0.0.2.tgz#26598a1d6167147cc192172970e7eed4e620384b"
+  integrity sha1-JlmKHWFnFHzBkhcpcOfu1OYgOEs=
 
 rxjs@6.6.3, rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.4:
   version "6.6.3"
