@@ -1,6 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
+/* eslint-disable @typescript-eslint/no-var-requires,no-undef */
 const webpack = require('webpack');
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
 const nodeExternals = require('webpack-node-externals');
 
 // eslint-disable-next-line no-undef
@@ -20,4 +19,3 @@ module.exports = (config) => {
     ]
   };
 };
-

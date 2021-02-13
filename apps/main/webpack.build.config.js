@@ -1,9 +1,4 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
-const path = require('path');
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
 const { externals } = require('./externalPackege');
 
 const fixRequireNotFound = {
@@ -56,7 +51,6 @@ module.exports = (config) => {
         },
       ],
     },
-    entry: [...config.entry.main],
     externals: [
       ...externals,
       '@nestjs/microservices',
@@ -81,6 +75,7 @@ module.exports = (config) => {
         /Critical dependency: the request of a dependency is an expression/,
         /Critical dependency: require function is used in a way in which dependencies cannot be statically extracted/,
         /license-webpack-plugin/,
+        /export declare/,
       ],
     },
   };

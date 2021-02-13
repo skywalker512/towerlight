@@ -111,7 +111,6 @@
             "production": {
               "webpackConfig": "apps/main/webpack.build.config.js",
               "optimization": true,
-              "extractLicenses": true,
               "inspect": false,
               "fileReplacements": [
                 {
