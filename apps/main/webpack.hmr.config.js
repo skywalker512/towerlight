@@ -10,8 +10,7 @@ module.exports = (config) => {
     externals: [
       nodeExternals({
         allowlist: ['webpack/hot/poll?100']
-      }),
-      '@nestjs/platform-fastify'
+      })
     ],
     plugins: [
       ...config.plugins,
