@@ -10,8 +10,9 @@ import {
 } from './next-adapter.constants';
 import { APP_FILTER, ApplicationConfig } from '@nestjs/core';
 import { NextAdapterFilter } from './next-adapter.filter';
-import Server, {
-  ServerConstructor,
+import Server from 'next/dist/next-server/server/next-server';
+import type {
+    ServerConstructor,
 } from 'next/dist/next-server/server/next-server';
 
 let next: Server;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ModuleMetadata } from '@nestjs/common';
-import { ServerConstructor } from 'next/dist/next-server/server/next-server';
+import type { ServerConstructor } from 'next/dist/next-server/server/next-server';
 import { RendererConfig } from './types';
 
 export interface NextAdapterModuleOptions {
