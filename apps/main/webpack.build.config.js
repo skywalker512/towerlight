@@ -5,25 +5,12 @@ const { externals } = require('./externalPackege');
 module.exports = (config) => {
   return {
     ...config,
-    module: {
-      ...config.module,
-      rules: [
-        ...config.module.rules,
-        {
-          test: /\.node$/,
-          use: {
-            loader: '@vercel/webpack-asset-relocator-loader',
-            options: {
-              // optional, base folder for asset emission (eg assets/name.ext)
-              outputAssetBase: 'assets',
-            },
-          },
-          parser: { amd: false },
-        },
-      ],
-    },
     externals: [
+      // 使用 ncc 进行编译的比较大并且与之间并不怎么关联的依赖
       ...externals,
+      // 将 next dev 时候用到的依赖移除
+      'next/dist/server/next-dev-server',
+      // 下面的都是代码中依赖，但是并没有安装的
       '@nestjs/microservices',
       '@nestjs/microservices/microservices-module',
       '@nestjs/websockets',
@@ -31,7 +18,6 @@ module.exports = (config) => {
       'cache-manager',
       'apollo-server-fastify',
       '@nestjs/platform-express',
-      'next/dist/server/next-dev-server',
       'long',
       'pino-pretty',
       '@nestjs/mongoose',
@@ -42,7 +28,6 @@ module.exports = (config) => {
       warningsFilter: [
         /Critical dependency: the request of a dependency is an expression/,
         /Critical dependency: require function is used in a way in which dependencies cannot be statically extracted/,
-        /license-webpack-plugin/,
         /export declare/,
       ],
     },
